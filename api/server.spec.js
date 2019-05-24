@@ -13,7 +13,32 @@ describe("server.js", () => {
         expect(res.status).toBe(200);
       });
 
-      it()
+      it('should return JSON', async () => {
+        const res = await request(server).get('/games');
+        expect(res.type).toBe('application/json');
+      })
+
+      it('should return { api: "up" }', async() => {
+        const res = await request(server).get('/');
+        expect(res.body).toEqual({ api: "up" });
+      })
     });
+
+    describe('POST /games', () => {
+      it("should return the list of games and HTTP status code 200", async () => {
+        const res = await request(server).get("/games");
+        expect(res.status).toBe(200);
+      });
+
+      it('should return JSON', async () => {
+        const res = await request(server).get('/games');
+        expect(res.type).toBe('application/json');
+      })
+
+      it('should return { api: "up" }', async() => {
+        const res = await request(server).get('/');
+        expect(res.body).toEqual({ api: "up" });
+      })
+    })
   });
 });

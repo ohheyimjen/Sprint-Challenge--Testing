@@ -8,5 +8,10 @@ describe('games model', () => {
     await db('games').truncate();  
   })
 
-  // describe('return array')
+  describe('get all()', () => {
+    it('should always return an array, even if no games are stored', async () => {
+      const games = await db('games');
+      expect(games)
+    })
+  })
 })

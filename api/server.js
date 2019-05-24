@@ -12,6 +12,10 @@ server.get('/games', async (req, res) => {
   res.status(200).json(rows);
 });
 
+server.get('/', async (req, res) => {
+  res.status(200).json({ api: 'up' });
+});
+
 server.post('/games', async (req, res) => {
   let game = req.body;
 
